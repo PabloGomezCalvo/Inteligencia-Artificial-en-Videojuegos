@@ -642,6 +642,7 @@ MonoBehaviour:
   orientacion: 0
   rotacion: 0
   velocidad: {x: 0, y: 0, z: 0}
+  seguir: 0
 --- !u!4 &1021455441
 Transform:
   m_ObjectHideFlags: 0
@@ -680,15 +681,40 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5788634181017704607, guid: bc06b89c3117c154494a8579f0adb5b9,
+    - target: {fileID: 308329242217921955, guid: bc06b89c3117c154494a8579f0adb5b9,
         type: 3}
-      propertyPath: m_Name
-      value: perrete
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 308329242217921955, guid: bc06b89c3117c154494a8579f0adb5b9,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 956517976957953746, guid: bc06b89c3117c154494a8579f0adb5b9,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 84
+      objectReference: {fileID: 0}
+    - target: {fileID: 1114119745490718629, guid: bc06b89c3117c154494a8579f0adb5b9,
+        type: 3}
+      propertyPath: objetivo
+      value: 
+      objectReference: {fileID: 1021455439}
+    - target: {fileID: 1114119745490718629, guid: bc06b89c3117c154494a8579f0adb5b9,
+        type: 3}
+      propertyPath: peso
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1114119745490718629, guid: bc06b89c3117c154494a8579f0adb5b9,
+        type: 3}
+      propertyPath: prioridad
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4727027847014224721, guid: bc06b89c3117c154494a8579f0adb5b9,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 2.45
       objectReference: {fileID: 0}
     - target: {fileID: 4727027847014224721, guid: bc06b89c3117c154494a8579f0adb5b9,
         type: 3}
@@ -760,25 +786,15 @@ PrefabInstance:
       propertyPath: umbralPrioridad
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1114119745490718629, guid: bc06b89c3117c154494a8579f0adb5b9,
+    - target: {fileID: 5361127396774125381, guid: bc06b89c3117c154494a8579f0adb5b9,
         type: 3}
-      propertyPath: objetivo
-      value: 
-      objectReference: {fileID: 1021455439}
-    - target: {fileID: 1114119745490718629, guid: bc06b89c3117c154494a8579f0adb5b9,
-        type: 3}
-      propertyPath: peso
+      propertyPath: seguir
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1114119745490718629, guid: bc06b89c3117c154494a8579f0adb5b9,
+    - target: {fileID: 5788634181017704607, guid: bc06b89c3117c154494a8579f0adb5b9,
         type: 3}
-      propertyPath: prioridad
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 956517976957953746, guid: bc06b89c3117c154494a8579f0adb5b9,
-        type: 3}
-      propertyPath: m_Constraints
-      value: 84
+      propertyPath: m_Name
+      value: perrete
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bc06b89c3117c154494a8579f0adb5b9, type: 3}

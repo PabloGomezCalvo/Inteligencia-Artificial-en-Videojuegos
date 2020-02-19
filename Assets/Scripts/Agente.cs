@@ -84,7 +84,13 @@ namespace UCM.IAV.Movimiento {
         /// </summary>
         [Tooltip("Cuerpo rígido.")]
         private Rigidbody cuerpoRigido;
-
+        /// <summary>
+        /// Bool para saber si sigue o huye
+        /// True -> seguir
+        /// False -> huir
+        /// </summary>
+        [Tooltip("Seguir")]
+        public bool seguir = true;
         /// <summary>
         /// Al comienzo, se inicialian algunas variables
         /// </summary>
@@ -104,7 +110,19 @@ namespace UCM.IAV.Movimiento {
             if (cuerpoRigido == null)
                 return;
 
-            Vector3 displacement = velocidad;
+            //CAMBIO DE HUIR A SEGUIR /////////////////
+            //Linea antigua por si se necesita
+            //Vector3 displacement = velocidad;
+            Vector3 displacement;
+            if (seguir)
+            {
+                displacement = velocidad;
+            }
+            else
+                displacement = -velocidad;
+            /////////////////////
+            
+
             orientacion += rotacion ;
             // Necesitamos "constreñir" inteligentemente la orientación al rango (0, 360)
             if (orientacion < 0.0f)
@@ -115,8 +133,6 @@ namespace UCM.IAV.Movimiento {
             // Estamos usando VelocityChange sólo con propósitos ilustrativos
             cuerpoRigido.velocity = displacement;
             Vector3 orientationVector = OriToVec(orientacion);
-
-
 
             cuerpoRigido.angularVelocity = orientationVector;
         }
@@ -175,7 +191,6 @@ namespace UCM.IAV.Movimiento {
             {
                 velocidad = Vector3.zero;
             }
-
             direccion = new Direccion();
         }
 
