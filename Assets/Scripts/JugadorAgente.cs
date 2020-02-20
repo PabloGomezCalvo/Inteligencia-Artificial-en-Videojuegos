@@ -59,7 +59,7 @@ namespace UCM.IAV.Movimiento
             }
             else
             {
-                _cuerpoRigido.AddForce(velocidad * Time.deltaTime, ForceMode.VelocityChange);
+                _cuerpoRigido.velocity = velocidad;
             } 
         }
 

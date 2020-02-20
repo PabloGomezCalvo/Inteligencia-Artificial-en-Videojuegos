@@ -91,6 +91,9 @@ namespace UCM.IAV.Movimiento {
         /// </summary>
         [Tooltip("Seguir")]
         public bool seguir = true;
+
+        public bool seMueve;
+
         /// <summary>
         /// Al comienzo, se inicialian algunas variables
         /// </summary>
@@ -101,6 +104,8 @@ namespace UCM.IAV.Movimiento {
             grupos = new Dictionary<int, List<Direccion>>();
             cuerpoRigido = GetComponent<Rigidbody>();
         }
+
+       
 
         /// <summary>
         /// En cada tick fijo, si hay cuerpo rígido, uso el simulador físico aplicando fuerzas o no
@@ -135,6 +140,7 @@ namespace UCM.IAV.Movimiento {
             Vector3 orientationVector = OriToVec(orientacion);
 
             cuerpoRigido.angularVelocity = orientationVector;
+
         }
 
         /// <summary>
@@ -168,8 +174,8 @@ namespace UCM.IAV.Movimiento {
                 direccion = GetPrioridadDireccion();
                 grupos.Clear();
             }
-            velocidad += direccion.lineal * Time.deltaTime;
-            rotacion += direccion.angular * Time.deltaTime;
+            velocidad += direccion.lineal;
+            rotacion = direccion.angular;
 
             if (velocidad.magnitude > velocidadMax)
             {

@@ -16,6 +16,8 @@ namespace UCM.IAV.Movimiento
     /// </summary>
     public class Seguir : ComportamientoAgente
     {
+        public float closeDistance;
+        public float maxDistance;
         /// <summary>
         /// Obtiene la dirección
         /// </summary>
@@ -25,7 +27,16 @@ namespace UCM.IAV.Movimiento
             Direccion direccion = new Direccion();
             direccion.lineal = objetivo.transform.position - transform.position;
             direccion.lineal.Normalize();
+            
             direccion.lineal = direccion.lineal * agente.aceleracionMax;
+            if (maxDistance > (objetivo.transform.position - transform.position).magnitude)
+            {
+                direccion.lineal *= (objetivo.transform.position - transform.position).magnitude / maxDistance;
+                if (closeDistance > (objetivo.transform.position - transform.position).magnitude)
+                {
+                    direccion.lineal *= 0;
+                }
+            }
             return direccion;
         }
     }

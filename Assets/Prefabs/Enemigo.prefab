@@ -58,7 +58,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0798286faa012da4998792f4e7f93900, type: 2}
+  - {fileID: 2100000, guid: aaaa0f2e00b51454f849503a3e84dd51, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -104,9 +104,10 @@ GameObject:
   - component: {fileID: 8363370477066533952}
   - component: {fileID: 8363370477066533967}
   - component: {fileID: 8363370477066533954}
+  - component: {fileID: 3434644491989315334}
   m_Layer: 0
   m_Name: Enemigo
-  m_TagString: Untagged
+  m_TagString: rata
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -138,7 +139,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e27b1398245256a4aa176c4cad05e629, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  combinarPorPeso: 0
+  combinarPorPeso: 1
   comnbinarPorPrioridad: 0
   umbralPrioridad: 0.2
   velocidadMax: 8
@@ -148,6 +149,8 @@ MonoBehaviour:
   orientacion: 0
   rotacion: 0
   velocidad: {x: 0, y: 0, z: 0}
+  seguir: 1
+  seMueve: 0
 --- !u!114 &8363370477066533967
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -160,9 +163,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82e92ec8f463fd84cac92ffd22bc97c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  peso: 0
+  peso: 1
   prioridad: 0
   objetivo: {fileID: 0}
+  closeDistance: 2
+  maxDistance: 8
 --- !u!54 &8363370477066533954
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -179,3 +184,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 116
   m_CollisionDetection: 0
+--- !u!114 &3434644491989315334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8363370477066533966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 970515ec210ae1248b0b59f34ca0c575, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  peso: 2
+  prioridad: 1
+  objetivo: {fileID: 0}
+  raydistance: 4
