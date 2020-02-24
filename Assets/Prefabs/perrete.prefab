@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7692229309883618920}
   m_Layer: 0
   m_Name: CuerpoRobotico
-  m_TagString: Untagged
+  m_TagString: perro
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 225964234760895136}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.3, y: 0.05, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.75, y: 0.75, z: 0.75}
   m_Children: []
   m_Father: {fileID: 4727027847014224721}
@@ -138,7 +138,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e27b1398245256a4aa176c4cad05e629, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  combinarPorPeso: 0
+  combinarPorPeso: 1
   comnbinarPorPrioridad: 0
   umbralPrioridad: 0.2
   velocidadMax: 8
@@ -148,6 +148,8 @@ MonoBehaviour:
   orientacion: 0
   rotacion: 0
   velocidad: {x: 0, y: 0, z: 0}
+  seguir: 1
+  seMueve: 0
 --- !u!114 &1114119745490718629
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -160,9 +162,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82e92ec8f463fd84cac92ffd22bc97c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  peso: 0
+  peso: 0.1
   prioridad: 0
   objetivo: {fileID: 0}
+  closeDistance: 2
+  maxDistance: 8
 --- !u!54 &956517976957953746
 Rigidbody:
   m_ObjectHideFlags: 0

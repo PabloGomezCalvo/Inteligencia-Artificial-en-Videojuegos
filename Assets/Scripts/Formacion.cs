@@ -28,8 +28,12 @@
             {
                 if (Physics.Raycast(transform.position, (Quaternion.AngleAxis(angle, Vector3.up) * transform.forward), out hitInfo, raydistance))
                 {
-                    if(hitInfo.collider.tag =="rata")
-                        direccion.lineal += (Quaternion.AngleAxis(angle, Vector3.up) * transform.forward)*-1;
+                    Debug.Log(hitInfo.collider.tag);
+
+                    if (hitInfo.collider.tag == "rata")
+                    {
+                        direccion.lineal += (Quaternion.AngleAxis(angle, Vector3.up) * transform.forward) * -1;
+                    }
                 }
                 angle += 45;
             }
@@ -38,11 +42,6 @@
             {
                 print(1);
             }
-
-          
-
-            
-
 
             return direccion;
         }

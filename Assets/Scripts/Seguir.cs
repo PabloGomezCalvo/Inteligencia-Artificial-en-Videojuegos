@@ -8,6 +8,7 @@
    Autor: Federico Peinado 
    Contacto: email@federicopeinado.com
 */
+using UnityEngine;
 namespace UCM.IAV.Movimiento
 {
 
@@ -31,7 +32,8 @@ namespace UCM.IAV.Movimiento
             direccion.lineal = direccion.lineal * agente.aceleracionMax;
             if (maxDistance > (objetivo.transform.position - transform.position).magnitude)
             {
-                direccion.lineal *= (objetivo.transform.position - transform.position).magnitude / maxDistance;
+                float percentaje = 0.25f * maxDistance/ ((objetivo.transform.position - transform.position).magnitude);
+                direccion.lineal *= percentaje;        
                 if (closeDistance > (objetivo.transform.position - transform.position).magnitude)
                 {
                     direccion.lineal *= 0;
