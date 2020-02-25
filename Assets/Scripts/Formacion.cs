@@ -28,9 +28,8 @@
             {
                 if (Physics.Raycast(transform.position, (Quaternion.AngleAxis(angle, Vector3.up) * transform.forward), out hitInfo, raydistance))
                 {
-                    Debug.Log(hitInfo.collider.tag);
 
-                    if (hitInfo.collider.tag == "rata")
+                    if (hitInfo.collider.tag == "rata" || hitInfo.collider.tag == "Player")
                     {
                         direccion.lineal += (Quaternion.AngleAxis(angle, Vector3.up) * transform.forward) * -1;
                     }
