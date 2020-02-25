@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6401254541215592792}
   - component: {fileID: 6401254541215592799}
   - component: {fileID: 6401254541215592798}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube
   m_TagString: obstaculos
   m_Icon: {fileID: 0}
@@ -104,7 +104,7 @@ GameObject:
   - component: {fileID: 6401254542012081768}
   - component: {fileID: 6401254542012081775}
   - component: {fileID: 6401254542012081774}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: CAsa
   m_TagString: obstaculos
   m_Icon: {fileID: 0}
@@ -196,7 +196,7 @@ GameObject:
   - component: {fileID: 6401254542140040361}
   - component: {fileID: 6401254542140040360}
   - component: {fileID: 6401254542140040367}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube (1)
   m_TagString: obstaculos
   m_Icon: {fileID: 0}
@@ -286,7 +286,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6401254542160962685}
   - component: {fileID: -8493011249270602725}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Casa
   m_TagString: obstaculos
   m_Icon: {fileID: 0}

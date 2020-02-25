@@ -3,7 +3,7 @@
    http://www.federicopeinado.com
 
    Este fichero forma parte del material de la asignatura Inteligencia Artificial para Videojuegos.
-   Esta asignatura se imparte en la Facultad de Informática de la Universidad Complutense de Madrid (España).
+   Esta asignatura se imparte en la Facultad de Informï¿½tica de la Universidad Complutense de Madrid (Espaï¿½a).
 
    Autor: Federico Peinado 
    Contacto: email@federicopeinado.com
@@ -35,34 +35,34 @@ namespace UCM.IAV.Movimiento {
         [Tooltip("Umbral de prioridad.")]
         public float umbralPrioridad = 0.2f;
         /// <summary>
-        /// Velocidad máxima
+        /// Velocidad mï¿½xima
         /// </summary>
-        [Tooltip("Velocidad máxima.")]
+        [Tooltip("Velocidad mï¿½xima.")]
         public float velocidadMax;
         /// <summary>
-        /// Aceleración máxima
+        /// Aceleraciï¿½n mï¿½xima
         /// </summary>
-        [Tooltip("Aceleración máxima.")]
+        [Tooltip("Aceleraciï¿½n mï¿½xima.")]
         public float aceleracionMax;
         /// <summary>
-        /// Rotación máxima
+        /// Rotaciï¿½n mï¿½xima
         /// </summary>
-        [Tooltip("Rotación máxima.")]
+        [Tooltip("Rotaciï¿½n mï¿½xima.")]
         public float rotacionMax;
         /// <summary>
-        /// Aceleración angular máxima
+        /// Aceleraciï¿½n angular mï¿½xima
         /// </summary>
-        [Tooltip("Aceleración angular máxima.")]
+        [Tooltip("Aceleraciï¿½n angular mï¿½xima.")]
         public float aceleracionAngularMax;
         /// <summary>
         /// Orientacion (es como la velocidad angular)
         /// </summary>
-        [Tooltip("Orientación.")]
+        [Tooltip("Orientaciï¿½n.")]
         public float orientacion;
         /// <summary>
-        /// Rotatción (valor que puede variar, como la velocidad, para cambiar la orientación)
+        /// Rotatciï¿½n (valor que puede variar, como la velocidad, para cambiar la orientaciï¿½n)
         /// </summary>
-        [Tooltip("Rotación.")]
+        [Tooltip("Rotaciï¿½n.")]
         public float rotacion;
         /// <summary>
         /// Velocidad
@@ -70,34 +70,39 @@ namespace UCM.IAV.Movimiento {
         [Tooltip("Velocidad.")]
         public Vector3 velocidad;
         /// <summary>
-        /// Valor de dirección / direccionamiento
+        /// Valor de direcciï¿½n / direccionamiento
         /// </summary>
-        [Tooltip("Dirección.")]
+        [Tooltip("Direcciï¿½n.")]
         protected Direccion direccion;
         /// <summary>
         /// Grupos de direcciones, agrupados por valor de prioridad
         /// </summary>
         [Tooltip("Grupos de direcciones.")]
-        private Dictionary<int, List<Direccion>> grupos;
+        protected Dictionary<int, List<Direccion>> grupos;
         /// <summary>
-        /// Componente de cuerpo rígido
+        /// Componente de cuerpo rï¿½gido
         /// </summary>
-        [Tooltip("Cuerpo rígido.")]
-        private Rigidbody cuerpoRigido;
+        [Tooltip("Cuerpo rï¿½gido.")]
+        protected Rigidbody cuerpoRigido;
         /// <summary>
         /// Bool para saber si sigue o huye
         /// True -> seguir
         /// False -> huir
         /// </summary>
         [Tooltip("Seguir")]
-        public bool seguir = true;
+        public bool Flauta = false;
 
+        public virtual void ToggleFlauta()
+        {
+            
+
+        }
         public bool seMueve;
 
         /// <summary>
         /// Al comienzo, se inicialian algunas variables
         /// </summary>
-        void Start()
+        protected void Start()
         {
             velocidad = Vector3.zero;
             direccion = new Direccion();
@@ -108,7 +113,7 @@ namespace UCM.IAV.Movimiento {
        
 
         /// <summary>
-        /// En cada tick fijo, si hay cuerpo rígido, uso el simulador físico aplicando fuerzas o no
+        /// En cada tick fijo, si hay cuerpo rï¿½gido, uso el simulador fï¿½sico aplicando fuerzas o no
         /// </summary>
         public virtual void FixedUpdate()
         {
@@ -117,25 +122,20 @@ namespace UCM.IAV.Movimiento {
 
             //CAMBIO DE HUIR A SEGUIR /////////////////
             //Linea antigua por si se necesita
-            //Vector3 displacement = velocidad;
-            Vector3 displacement;
-            if (seguir)
-            {
-                displacement = velocidad;
-            }
-            else
-                displacement = -velocidad;
+            Vector3 displacement = velocidad;
+            
+            
             /////////////////////
             
 
             orientacion += rotacion ;
-            // Necesitamos "constreñir" inteligentemente la orientación al rango (0, 360)
+            // Necesitamos "constreï¿½ir" inteligentemente la orientaciï¿½n al rango (0, 360)
             if (orientacion < 0.0f)
                 orientacion += 360.0f;
             else if (orientacion > 360.0f)
                 orientacion -= 360.0f;
-            // El ForceMode dependerá de lo que quieras conseguir
-            // Estamos usando VelocityChange sólo con propósitos ilustrativos
+            // El ForceMode dependerï¿½ de lo que quieras conseguir
+            // Estamos usando VelocityChange sï¿½lo con propï¿½sitos ilustrativos
             cuerpoRigido.velocity = displacement;
             Vector3 orientationVector = OriToVec(orientacion);
 
@@ -144,28 +144,28 @@ namespace UCM.IAV.Movimiento {
         }
 
         /// <summary>
-        /// En cada tick, hace lo básico del movimiento del agente
+        /// En cada tick, hace lo bï¿½sico del movimiento del agente
         /// </summary>
         public virtual void Update()
         {
             if (cuerpoRigido != null)
                 return;
-            // ... código previo
+            // ... cï¿½digo previo
             Vector3 desplazamiento = velocidad * Time.deltaTime;
             orientacion += rotacion * Time.deltaTime;
-            // Necesitamos "constreñir" inteligentemente la orientación al rango (0, 360)
+            // Necesitamos "constreï¿½ir" inteligentemente la orientaciï¿½n al rango (0, 360)
             if (orientacion < 0.0f)
                 orientacion += 360.0f;
             else if (orientacion > 360.0f)
                 orientacion -= 360.0f;
             //transform.Translate(desplazamiento, Space.World);
-            // Restaura la rotación al punto inicial antes de rotar el objeto nuestro valor
+            // Restaura la rotaciï¿½n al punto inicial antes de rotar el objeto nuestro valor
             transform.rotation = new Quaternion();
             transform.Rotate(Vector3.up, orientacion);
         }
 
         /// <summary>
-        /// En cada parte tardía del tick, hace tareas de corrección numérica
+        /// En cada parte tardï¿½a del tick, hace tareas de correcciï¿½n numï¿½rica
         /// </summary>
         public virtual void LateUpdate()
         {
@@ -201,7 +201,7 @@ namespace UCM.IAV.Movimiento {
         }
 
         /// <summary>
-        /// Establece la dirección tal cual
+        /// Establece la direcciï¿½n tal cual
         /// </summary>
         public void SetDireccion(Direccion direccion)
         {
@@ -209,7 +209,7 @@ namespace UCM.IAV.Movimiento {
         }
 
         /// <summary>
-        /// Establece la dirección por peso
+        /// Establece la direcciï¿½n por peso
         /// </summary>
         /// <param name="direccion"></param>
         /// <param name="peso"></param>
@@ -220,7 +220,7 @@ namespace UCM.IAV.Movimiento {
         }
 
         /// <summary>
-        /// Establece la dirección por prioridad
+        /// Establece la direcciï¿½n por prioridad
         /// </summary>
         /// <param name="direccion"></param>
         /// <param name="prioridad"></param>
@@ -234,7 +234,7 @@ namespace UCM.IAV.Movimiento {
         }
 
         /// <summary>
-        /// Devuelve el valor de dirección calculado por prioridad
+        /// Devuelve el valor de direcciï¿½n calculado por prioridad
         /// </summary>
         /// <returns></returns>
         private Direccion GetPrioridadDireccion()
@@ -259,7 +259,7 @@ namespace UCM.IAV.Movimiento {
             return direccion;
         }
         /// <summary>
-        /// Calculates el Vector3 dado un cierto valor de orientación
+        /// Calculates el Vector3 dado un cierto valor de orientaciï¿½n
         /// </summary>
         /// <param name="orientacion"></param>
         /// <returns></returns>

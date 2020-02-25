@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6385498255362697139}
   - component: {fileID: 4093376823607665808}
   - component: {fileID: 4079864211085707005}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube
   m_TagString: obstaculos
   m_Icon: {fileID: 0}
@@ -101,7 +101,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3868843896039801612}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Muro
   m_TagString: obstaculos
   m_Icon: {fileID: 0}

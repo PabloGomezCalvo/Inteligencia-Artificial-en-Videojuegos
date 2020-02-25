@@ -101,9 +101,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4727027847014224721}
-  - component: {fileID: 5361127396774125381}
   - component: {fileID: 1114119745490718629}
   - component: {fileID: 956517976957953746}
+  - component: {fileID: 4860962831981342294}
   m_Layer: 0
   m_Name: perrete
   m_TagString: Untagged
@@ -126,30 +126,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5361127396774125381
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5788634181017704607}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e27b1398245256a4aa176c4cad05e629, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  combinarPorPeso: 1
-  comnbinarPorPrioridad: 0
-  umbralPrioridad: 0.2
-  velocidadMax: 8
-  aceleracionMax: 15
-  rotacionMax: 360
-  aceleracionAngularMax: 500
-  orientacion: 0
-  rotacion: 0
-  velocidad: {x: 0, y: 0, z: 0}
-  seguir: 1
-  seMueve: 0
 --- !u!114 &1114119745490718629
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -157,7 +133,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5788634181017704607}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 82e92ec8f463fd84cac92ffd22bc97c9, type: 3}
   m_Name: 
@@ -165,7 +141,7 @@ MonoBehaviour:
   peso: 0.1
   prioridad: 0
   objetivo: {fileID: 0}
-  closeDistance: 2
+  closeDistance: 3
   maxDistance: 8
 --- !u!54 &956517976957953746
 Rigidbody:
@@ -183,3 +159,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 116
   m_CollisionDetection: 0
+--- !u!114 &4860962831981342294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5788634181017704607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f81dc197389d914fa16cd9fbcc8c6b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  combinarPorPeso: 1
+  comnbinarPorPrioridad: 0
+  umbralPrioridad: 0.2
+  velocidadMax: 8
+  aceleracionMax: 15
+  rotacionMax: 360
+  aceleracionAngularMax: 500
+  orientacion: 0
+  rotacion: 0
+  velocidad: {x: 0, y: 0, z: 0}
+  Flauta: 0
+  seMueve: 0
