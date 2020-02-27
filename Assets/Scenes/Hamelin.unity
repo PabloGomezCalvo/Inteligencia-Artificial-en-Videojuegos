@@ -120,50 +120,12 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &11742363 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5788634181017704607, guid: bc06b89c3117c154494a8579f0adb5b9,
-    type: 3}
-  m_PrefabInstance: {fileID: 2042283949}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &11742366
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 11742363}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ebcf978199c8d564187e611a98d87c5d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  peso: 10
-  prioridad: 1
-  objetivo: {fileID: 0}
-  rayDistance: 5
 --- !u!4 &11742367 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4727027847014224721, guid: bc06b89c3117c154494a8579f0adb5b9,
     type: 3}
   m_PrefabInstance: {fileID: 2042283949}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &11742369
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 11742363}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ae70ca125c7b944599585734daf02b6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  peso: 1
-  prioridad: 1
-  objetivo: {fileID: 1021455439}
-  maxDistance: 8
 --- !u!1 &38035112
 GameObject:
   m_ObjectHideFlags: 0
@@ -257,6 +219,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!114 &38035115
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -275,6 +239,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   m_Type: 1
   m_PreserveAspect: 0
@@ -444,6 +410,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 188105750}
     m_Modifications:
+    - target: {fileID: 8363370477066533966, guid: 46c7731398e1da4409a61562844d2383,
+        type: 3}
+      propertyPath: m_Name
+      value: Enemigo (3)
+      objectReference: {fileID: 0}
     - target: {fileID: 1434944574, guid: 46c7731398e1da4409a61562844d2383, type: 3}
       propertyPath: rayDistance
       value: 5
@@ -478,6 +449,21 @@ PrefabInstance:
       propertyPath: objetivo
       value: 
       objectReference: {fileID: 2000997955}
+    - target: {fileID: 5906423762932414146, guid: 46c7731398e1da4409a61562844d2383,
+        type: 3}
+      propertyPath: peso
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5906423762932414146, guid: 46c7731398e1da4409a61562844d2383,
+        type: 3}
+      propertyPath: timePatroling
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5906423762932414146, guid: 46c7731398e1da4409a61562844d2383,
+        type: 3}
+      propertyPath: desviacion
+      value: 180
+      objectReference: {fileID: 0}
     - target: {fileID: 8363370477066533952, guid: 46c7731398e1da4409a61562844d2383,
         type: 3}
       propertyPath: combinarPorPeso
@@ -486,7 +472,7 @@ PrefabInstance:
     - target: {fileID: 8363370477066533953, guid: 46c7731398e1da4409a61562844d2383,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -16.7
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 8363370477066533953, guid: 46c7731398e1da4409a61562844d2383,
         type: 3}
@@ -496,7 +482,7 @@ PrefabInstance:
     - target: {fileID: 8363370477066533953, guid: 46c7731398e1da4409a61562844d2383,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 11.8
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 8363370477066533953, guid: 46c7731398e1da4409a61562844d2383,
         type: 3}
@@ -538,11 +524,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8363370477066533966, guid: 46c7731398e1da4409a61562844d2383,
-        type: 3}
-      propertyPath: m_Name
-      value: Enemigo (3)
-      objectReference: {fileID: 0}
     - target: {fileID: 8363370477066533967, guid: 46c7731398e1da4409a61562844d2383,
         type: 3}
       propertyPath: objetivo
@@ -582,54 +563,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 188105750}
     m_Modifications:
-    - target: {fileID: 1434944574, guid: 46c7731398e1da4409a61562844d2383, type: 3}
-      propertyPath: rayDistance
-      value: 5
+    - target: {fileID: 8363370477066533966, guid: 46c7731398e1da4409a61562844d2383,
+        type: 3}
+      propertyPath: m_Name
+      value: Enemigo (1)
       objectReference: {fileID: 0}
     - target: {fileID: 3434644491989315334, guid: 46c7731398e1da4409a61562844d2383,
         type: 3}
       propertyPath: objetivo
       value: 
       objectReference: {fileID: 1021455439}
-    - target: {fileID: 3434644491989315334, guid: 46c7731398e1da4409a61562844d2383,
-        type: 3}
-      propertyPath: raydistance
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3434644491989315334, guid: 46c7731398e1da4409a61562844d2383,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3434644491989315334, guid: 46c7731398e1da4409a61562844d2383,
-        type: 3}
-      propertyPath: peso
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 5906423762932414146, guid: 46c7731398e1da4409a61562844d2383,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5906423762932414146, guid: 46c7731398e1da4409a61562844d2383,
         type: 3}
       propertyPath: objetivo
       value: 
       objectReference: {fileID: 2000997955}
-    - target: {fileID: 8363370476560986394, guid: 46c7731398e1da4409a61562844d2383,
+    - target: {fileID: 5906423762932414146, guid: 46c7731398e1da4409a61562844d2383,
         type: 3}
-      propertyPath: m_TagString
-      value: rata
-      objectReference: {fileID: 0}
-    - target: {fileID: 8363370477066533952, guid: 46c7731398e1da4409a61562844d2383,
-        type: 3}
-      propertyPath: combinarPorPeso
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8363370477066533952, guid: 46c7731398e1da4409a61562844d2383,
-        type: 3}
-      propertyPath: seguir
-      value: 1
+      propertyPath: desviacion
+      value: 180
       objectReference: {fileID: 0}
     - target: {fileID: 8363370477066533953, guid: 46c7731398e1da4409a61562844d2383,
         type: 3}
@@ -686,41 +638,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8363370477066533966, guid: 46c7731398e1da4409a61562844d2383,
-        type: 3}
-      propertyPath: m_Name
-      value: Enemigo (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 8363370477066533967, guid: 46c7731398e1da4409a61562844d2383,
         type: 3}
       propertyPath: objetivo
       value: 
       objectReference: {fileID: 1021455439}
-    - target: {fileID: 8363370477066533967, guid: 46c7731398e1da4409a61562844d2383,
-        type: 3}
-      propertyPath: prioridad
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8363370477066533967, guid: 46c7731398e1da4409a61562844d2383,
-        type: 3}
-      propertyPath: maxDistance
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 8363370477066533967, guid: 46c7731398e1da4409a61562844d2383,
-        type: 3}
-      propertyPath: closeDistance
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8363370477066533967, guid: 46c7731398e1da4409a61562844d2383,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8363370477066533967, guid: 46c7731398e1da4409a61562844d2383,
-        type: 3}
-      propertyPath: peso
-      value: 10
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 46c7731398e1da4409a61562844d2383, type: 3}
 --- !u!1 &373338642
@@ -822,6 +744,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 188105750}
     m_Modifications:
+    - target: {fileID: 8363370477066533966, guid: 46c7731398e1da4409a61562844d2383,
+        type: 3}
+      propertyPath: m_Name
+      value: Enemigo (4)
+      objectReference: {fileID: 0}
     - target: {fileID: 1434944574, guid: 46c7731398e1da4409a61562844d2383, type: 3}
       propertyPath: rayDistance
       value: 5
@@ -856,6 +783,21 @@ PrefabInstance:
       propertyPath: objetivo
       value: 
       objectReference: {fileID: 2000997955}
+    - target: {fileID: 5906423762932414146, guid: 46c7731398e1da4409a61562844d2383,
+        type: 3}
+      propertyPath: peso
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5906423762932414146, guid: 46c7731398e1da4409a61562844d2383,
+        type: 3}
+      propertyPath: timePatroling
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5906423762932414146, guid: 46c7731398e1da4409a61562844d2383,
+        type: 3}
+      propertyPath: desviacion
+      value: 180
+      objectReference: {fileID: 0}
     - target: {fileID: 8363370477066533952, guid: 46c7731398e1da4409a61562844d2383,
         type: 3}
       propertyPath: combinarPorPeso
@@ -916,11 +858,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8363370477066533966, guid: 46c7731398e1da4409a61562844d2383,
-        type: 3}
-      propertyPath: m_Name
-      value: Enemigo (4)
-      objectReference: {fileID: 0}
     - target: {fileID: 8363370477066533967, guid: 46c7731398e1da4409a61562844d2383,
         type: 3}
       propertyPath: objetivo
@@ -960,44 +897,35 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 188105750}
     m_Modifications:
-    - target: {fileID: 1434944574, guid: 46c7731398e1da4409a61562844d2383, type: 3}
-      propertyPath: rayDistance
-      value: 5
+    - target: {fileID: 8363370477066533966, guid: 46c7731398e1da4409a61562844d2383,
+        type: 3}
+      propertyPath: m_Name
+      value: Enemigo (5)
       objectReference: {fileID: 0}
     - target: {fileID: 3434644491989315334, guid: 46c7731398e1da4409a61562844d2383,
         type: 3}
       propertyPath: objetivo
       value: 
       objectReference: {fileID: 1021455439}
-    - target: {fileID: 3434644491989315334, guid: 46c7731398e1da4409a61562844d2383,
-        type: 3}
-      propertyPath: raydistance
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3434644491989315334, guid: 46c7731398e1da4409a61562844d2383,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3434644491989315334, guid: 46c7731398e1da4409a61562844d2383,
-        type: 3}
-      propertyPath: peso
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 5906423762932414146, guid: 46c7731398e1da4409a61562844d2383,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5906423762932414146, guid: 46c7731398e1da4409a61562844d2383,
         type: 3}
       propertyPath: objetivo
       value: 
       objectReference: {fileID: 2000997955}
-    - target: {fileID: 8363370477066533952, guid: 46c7731398e1da4409a61562844d2383,
+    - target: {fileID: 5906423762932414146, guid: 46c7731398e1da4409a61562844d2383,
         type: 3}
-      propertyPath: combinarPorPeso
+      propertyPath: peso
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5906423762932414146, guid: 46c7731398e1da4409a61562844d2383,
+        type: 3}
+      propertyPath: timePatroling
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5906423762932414146, guid: 46c7731398e1da4409a61562844d2383,
+        type: 3}
+      propertyPath: desviacion
+      value: 180
       objectReference: {fileID: 0}
     - target: {fileID: 8363370477066533953, guid: 46c7731398e1da4409a61562844d2383,
         type: 3}
@@ -1054,41 +982,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8363370477066533966, guid: 46c7731398e1da4409a61562844d2383,
-        type: 3}
-      propertyPath: m_Name
-      value: Enemigo (5)
-      objectReference: {fileID: 0}
     - target: {fileID: 8363370477066533967, guid: 46c7731398e1da4409a61562844d2383,
         type: 3}
       propertyPath: objetivo
       value: 
       objectReference: {fileID: 1021455439}
-    - target: {fileID: 8363370477066533967, guid: 46c7731398e1da4409a61562844d2383,
-        type: 3}
-      propertyPath: prioridad
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8363370477066533967, guid: 46c7731398e1da4409a61562844d2383,
-        type: 3}
-      propertyPath: maxDistance
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 8363370477066533967, guid: 46c7731398e1da4409a61562844d2383,
-        type: 3}
-      propertyPath: closeDistance
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8363370477066533967, guid: 46c7731398e1da4409a61562844d2383,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8363370477066533967, guid: 46c7731398e1da4409a61562844d2383,
-        type: 3}
-      propertyPath: peso
-      value: 10
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 46c7731398e1da4409a61562844d2383, type: 3}
 --- !u!1 &687511467
@@ -1267,6 +1165,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 188105750}
     m_Modifications:
+    - target: {fileID: 8363370477066533966, guid: 46c7731398e1da4409a61562844d2383,
+        type: 3}
+      propertyPath: m_Name
+      value: Enemigo (6)
+      objectReference: {fileID: 0}
     - target: {fileID: 1434944574, guid: 46c7731398e1da4409a61562844d2383, type: 3}
       propertyPath: rayDistance
       value: 5
@@ -1295,6 +1198,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5906423762932414146, guid: 46c7731398e1da4409a61562844d2383,
+        type: 3}
+      propertyPath: peso
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5906423762932414146, guid: 46c7731398e1da4409a61562844d2383,
+        type: 3}
+      propertyPath: timePatroling
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5906423762932414146, guid: 46c7731398e1da4409a61562844d2383,
+        type: 3}
+      propertyPath: desviacion
+      value: 180
       objectReference: {fileID: 0}
     - target: {fileID: 8363370477066533953, guid: 46c7731398e1da4409a61562844d2383,
         type: 3}
@@ -1351,11 +1269,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8363370477066533966, guid: 46c7731398e1da4409a61562844d2383,
-        type: 3}
-      propertyPath: m_Name
-      value: Enemigo (6)
-      objectReference: {fileID: 0}
     - target: {fileID: 8363370477066533967, guid: 46c7731398e1da4409a61562844d2383,
         type: 3}
       propertyPath: objetivo
@@ -1373,6 +1286,38 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 46c7731398e1da4409a61562844d2383, type: 3}
+--- !u!1 &788482641
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 788482642}
+  m_Layer: 0
+  m_Name: Pueblo
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &788482642
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 788482641}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 976772617}
+  - {fileID: 1005046270}
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &799236464
 GameObject:
   m_ObjectHideFlags: 0
@@ -1428,9 +1373,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 100
+    m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -1741,14 +1688,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 976772616}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.8075733, y: 11.449047, z: 2.4467976}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1574230440}
   - {fileID: 373338646}
   - {fileID: 834462127}
   - {fileID: 871010864}
-  m_Father: {fileID: 1005046270}
+  m_Father: {fileID: 788482642}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1005046269
@@ -1775,13 +1722,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1005046269}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.8075733, y: -11.449047, z: -2.4467976}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 976772617}
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_Children: []
+  m_Father: {fileID: 788482642}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1005046271
 MonoBehaviour:
@@ -1805,11 +1751,31 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 188105750}
     m_Modifications:
+    - target: {fileID: 8363370477066533966, guid: 46c7731398e1da4409a61562844d2383,
+        type: 3}
+      propertyPath: m_Name
+      value: Enemigo
+      objectReference: {fileID: 0}
     - target: {fileID: 3434644491989315334, guid: 46c7731398e1da4409a61562844d2383,
         type: 3}
       propertyPath: objetivo
       value: 
       objectReference: {fileID: 1021455439}
+    - target: {fileID: 5906423762932414146, guid: 46c7731398e1da4409a61562844d2383,
+        type: 3}
+      propertyPath: peso
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5906423762932414146, guid: 46c7731398e1da4409a61562844d2383,
+        type: 3}
+      propertyPath: timePatroling
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5906423762932414146, guid: 46c7731398e1da4409a61562844d2383,
+        type: 3}
+      propertyPath: desviacion
+      value: 180
+      objectReference: {fileID: 0}
     - target: {fileID: 8363370477066533953, guid: 46c7731398e1da4409a61562844d2383,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1864,11 +1830,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8363370477066533966, guid: 46c7731398e1da4409a61562844d2383,
-        type: 3}
-      propertyPath: m_Name
-      value: Enemigo
       objectReference: {fileID: 0}
     - target: {fileID: 8363370477066533967, guid: 46c7731398e1da4409a61562844d2383,
         type: 3}
@@ -2017,9 +1978,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 100
+    m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -2121,8 +2084,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1437547626}
-        m_MethodName: GenerarMapa
+      - m_Target: {fileID: 1005046271}
+        m_MethodName: ResetPueblo
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2132,6 +2095,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!114 &1180534264
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2150,6 +2115,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   m_Type: 1
   m_PreserveAspect: 0
@@ -2470,6 +2437,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 188105750}
     m_Modifications:
+    - target: {fileID: 8363370477066533966, guid: 46c7731398e1da4409a61562844d2383,
+        type: 3}
+      propertyPath: m_Name
+      value: Enemigo (2)
+      objectReference: {fileID: 0}
     - target: {fileID: 1434944574, guid: 46c7731398e1da4409a61562844d2383, type: 3}
       propertyPath: rayDistance
       value: 5
@@ -2504,6 +2476,21 @@ PrefabInstance:
       propertyPath: objetivo
       value: 
       objectReference: {fileID: 2000997955}
+    - target: {fileID: 5906423762932414146, guid: 46c7731398e1da4409a61562844d2383,
+        type: 3}
+      propertyPath: peso
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5906423762932414146, guid: 46c7731398e1da4409a61562844d2383,
+        type: 3}
+      propertyPath: timePatroling
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5906423762932414146, guid: 46c7731398e1da4409a61562844d2383,
+        type: 3}
+      propertyPath: desviacion
+      value: 180
+      objectReference: {fileID: 0}
     - target: {fileID: 8363370477066533952, guid: 46c7731398e1da4409a61562844d2383,
         type: 3}
       propertyPath: combinarPorPeso
@@ -2564,11 +2551,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8363370477066533966, guid: 46c7731398e1da4409a61562844d2383,
-        type: 3}
-      propertyPath: m_Name
-      value: Enemigo (2)
-      objectReference: {fileID: 0}
     - target: {fileID: 8363370477066533967, guid: 46c7731398e1da4409a61562844d2383,
         type: 3}
       propertyPath: objetivo
@@ -2620,15 +2602,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 188105750}
     m_Modifications:
-    - target: {fileID: 1114119745490718629, guid: bc06b89c3117c154494a8579f0adb5b9,
+    - target: {fileID: 5788634181017704607, guid: bc06b89c3117c154494a8579f0adb5b9,
         type: 3}
-      propertyPath: objetivo
-      value: 
-      objectReference: {fileID: 1021455439}
-    - target: {fileID: 1114119745490718629, guid: bc06b89c3117c154494a8579f0adb5b9,
-        type: 3}
-      propertyPath: peso
-      value: 1
+      propertyPath: m_Name
+      value: perrete
       objectReference: {fileID: 0}
     - target: {fileID: 4727027847014224721, guid: bc06b89c3117c154494a8579f0adb5b9,
         type: 3}
@@ -2685,10 +2662,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5788634181017704607, guid: bc06b89c3117c154494a8579f0adb5b9,
+    - target: {fileID: 1114119745490718629, guid: bc06b89c3117c154494a8579f0adb5b9,
         type: 3}
-      propertyPath: m_Name
-      value: perrete
+      propertyPath: objetivo
+      value: 
+      objectReference: {fileID: 1021455439}
+    - target: {fileID: 11742369, guid: bc06b89c3117c154494a8579f0adb5b9, type: 3}
+      propertyPath: objetivo
+      value: 
+      objectReference: {fileID: 1021455439}
+    - target: {fileID: 11742370, guid: bc06b89c3117c154494a8579f0adb5b9, type: 3}
+      propertyPath: desviacion
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bc06b89c3117c154494a8579f0adb5b9, type: 3}
