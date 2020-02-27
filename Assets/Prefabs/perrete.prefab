@@ -104,6 +104,9 @@ GameObject:
   - component: {fileID: 1114119745490718629}
   - component: {fileID: 956517976957953746}
   - component: {fileID: 4860962831981342294}
+  - component: {fileID: 11742366}
+  - component: {fileID: 11742369}
+  - component: {fileID: 11742370}
   m_Layer: 0
   m_Name: perrete
   m_TagString: Untagged
@@ -138,7 +141,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82e92ec8f463fd84cac92ffd22bc97c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  peso: 0.1
+  peso: 1
   prioridad: 0
   objetivo: {fileID: 0}
   closeDistance: 3
@@ -183,3 +186,52 @@ MonoBehaviour:
   velocidad: {x: 0, y: 0, z: 0}
   Flauta: 0
   seMueve: 0
+--- !u!114 &11742366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5788634181017704607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebcf978199c8d564187e611a98d87c5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  peso: 10
+  prioridad: 1
+  objetivo: {fileID: 0}
+  rayDistance: 5
+--- !u!114 &11742369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5788634181017704607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ae70ca125c7b944599585734daf02b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  peso: 1
+  prioridad: 1
+  objetivo: {fileID: 0}
+  maxDistance: 8
+--- !u!114 &11742370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5788634181017704607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 053012e9a073b2a4093702e2d1d72efd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  peso: 1
+  prioridad: 1
+  objetivo: {fileID: 0}
+  timePatroling: 5
+  changePatron: 0

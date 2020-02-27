@@ -190,10 +190,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 053012e9a073b2a4093702e2d1d72efd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  peso: 30
+  peso: 1
   prioridad: 1
   objetivo: {fileID: 0}
-  rayDistance: 1
+  timePatroling: 5
+  changePatron: 0
 --- !u!114 &1434944574
 MonoBehaviour:
   m_ObjectHideFlags: 0

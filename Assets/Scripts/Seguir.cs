@@ -20,13 +20,17 @@ namespace UCM.IAV.Movimiento
         /// <summary>
         /// Minimo de distancia que tiene que estar del objetivo
         /// </summary>
+        /// 
+        [Range(1.0f, 5.0f)]
         public float closeDistance;
         /// <summary>
         /// Comienzo de la distancia de frenado
         /// </summary>
+        /// 
+        [Range(5.0f, 20.0f)]
         public float maxDistance;
         /// <summary>
-        /// Obtiene la dirección
+        /// Obtiene la dirección para ir hacia su objetivo, y se frena progresivamente hasta llegar
         /// </summary>
         /// <returns>Direccion</returns>
         public override Direccion GetDireccion()

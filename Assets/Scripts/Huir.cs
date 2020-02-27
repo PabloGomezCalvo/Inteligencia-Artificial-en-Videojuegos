@@ -10,9 +10,11 @@ namespace UCM.IAV.Movimiento
         /// <summary>
         /// Comienzo de la distancia de frenado
         /// </summary>
+        /// 
+        [Range(1.0f, 20.0f)]
         public float maxDistance;
         /// <summary>
-        /// Obtiene la dirección
+        /// Obtiene la dirección opuesta para ir al flautista, tan solo se aplica si esta dentro del area de acción
         /// </summary>
         /// <returns>Direccion</returns>
         public override Direccion GetDireccion()

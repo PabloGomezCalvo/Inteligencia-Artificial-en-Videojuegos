@@ -4,6 +4,10 @@ using UnityEngine;
 
 namespace UCM.IAV.Movimiento
 {
+
+    /// <summary>
+    /// Clase que hereda de Agente para controlar los diferentes comportamientos de la rata
+    /// </summary>
     public class AgenteRata : Agente
     {
         protected Seguir seguir;
@@ -21,7 +25,7 @@ namespace UCM.IAV.Movimiento
             formacion = GetComponent<Formacion>();
             patrullar = GetComponent<Patrullar>();
             seguir.enabled = false;
-            formacion.enabled = false;
+            formacion.enabled = true;
             patrullar.enabled = true;
             cuerpoRigido = GetComponent<Rigidbody>();
              velocidad = Vector3.zero;
@@ -32,8 +36,7 @@ namespace UCM.IAV.Movimiento
         }
         public override void ToggleFlauta()
         {
-            seguir.enabled = !seguir.enabled;            
-            formacion.enabled = !formacion.enabled;            
+            seguir.enabled = !seguir.enabled;
             patrullar.enabled = !patrullar.enabled;            
         }
     }

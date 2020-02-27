@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 namespace UCM.IAV.Movimiento
 {
+    /// <summary>
+    /// Clase para manejar el comportamieto general de los agentes 
+    /// </summary>
     public class AgentesManager : MonoBehaviour
     {
 
@@ -11,16 +14,16 @@ namespace UCM.IAV.Movimiento
         {
             agentes = GetComponentsInChildren<Agente>();
         }
-        /// <summary>
-        /// Update is called every frame, if the MonoBehaviour is enabled.
-        /// </summary>
-        void Update()
+
+        private void Update()
         {
-            if(Input.GetKeyUp("space")){
+            if (Input.GetKeyUp("space"))
+            {
+                // Cambia el estado de los agentes al tocar la flauta
                 foreach (Agente a in agentes)
                 {
                     a.ToggleFlauta();
-                }   
+                }
             }
         }
     }

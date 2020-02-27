@@ -5,14 +5,12 @@ using UnityEngine;
 public class Botones : MonoBehaviour
 {
   
+    /// <summary>
+    /// Para salir del juego
+    /// </summary>
     public void Salir()
     {
         Application.Quit();
-    }
-    
-    public void GenerarMapa()
-    {
-        Debug.Log("MAPA NUEVO");
     }
 
 }

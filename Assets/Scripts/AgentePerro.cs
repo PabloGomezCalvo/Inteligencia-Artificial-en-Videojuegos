@@ -4,22 +4,27 @@ using UnityEngine;
 
 namespace UCM.IAV.Movimiento
 {
+    /// <summary>
+    ///  Clase que hereda de Agente para controlar los diferentes comportamientos del Perro
+    /// </summary>
     public class AgentePerro : Agente
     {
         protected Seguir seguir;
 
         protected Huir huir;
 
-        /// <summary>
-        /// Start is called on the frame when a script is enabled just before
-        /// any of the Update methods is called the first time.
-        /// </summary>
-        void Start()
+        protected Patrullar patrullar;
+
+        
+        private void Start()
         {
             seguir = GetComponent<Seguir>();
             huir = GetComponent<Huir>();
+            patrullar = GetComponent<Patrullar>();
+
             seguir.enabled = true;
             huir.enabled = false;
+            patrullar.enabled = false;
             cuerpoRigido = GetComponent<Rigidbody>();
              velocidad = Vector3.zero;
             direccion = new Direccion();
@@ -30,7 +35,8 @@ namespace UCM.IAV.Movimiento
         public override void ToggleFlauta()
         {
             seguir.enabled = !seguir.enabled;            
-                    
+            patrullar.enabled = !patrullar.enabled;
+
             huir.enabled = !huir.enabled;            
         }
     }
