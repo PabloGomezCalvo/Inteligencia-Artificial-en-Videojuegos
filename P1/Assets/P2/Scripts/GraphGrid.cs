@@ -35,7 +35,9 @@ namespace UCM.IAV.Navegacion
         // Nos guardamos el ini y el fin
         Vector2 ini;
         Vector2 fin;
-
+        //Nos guardamos al minotauro y al agente
+        public GameObject agent;
+        public GameObject minotauro;
         //Cols y Rows
         public int numCols;
         public int numRows;
@@ -105,6 +107,20 @@ namespace UCM.IAV.Navegacion
 
                 }
             }
+
+            //Generamos al agente y al minotauro
+            agent = Instantiate(agent, new Vector3(ini.x, 0, ini.y), Quaternion.identity, transform);
+            bool correct = false;
+            do
+            {
+                int j = UnityEngine.Random.Range(0, numRows - 1);
+                int i = UnityEngine.Random.Range(0, numCols - 1);
+                if (mapVertices[i, j] && (ini.x != i || ini.y != j))
+                {
+                    minotauro = Instantiate(minotauro, new Vector3(i, 0, j), Quaternion.identity, transform);
+                    correct = true;
+                }
+            } while (!correct);
         }
 
         public void GenerateMap()
