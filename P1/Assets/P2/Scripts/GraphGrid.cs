@@ -178,6 +178,14 @@ namespace UCM.IAV.Navegacion
             //Fin
             mapVertices[xf, yf] = true;
 
+            if (x == 0) x++;
+            else if (x == nR) x--;
+            if (y == 0) y++;
+            else if (y == nC) y--;
+
+            mapVertices[x, y] = true;
+
+
             if (xf == 0) xf++;
             else if (xf == nR) xf--;
             if (yf == 0) yf++;
@@ -189,12 +197,6 @@ namespace UCM.IAV.Navegacion
 
             xf = UnityEngine.Random.Range(1, nR);
             yf = UnityEngine.Random.Range(1, nC);
-
-            /*
-            Debug.Log("ini: " + x + ", " + y);
-            Debug.Log("mid: " + tempx + ", " + tempy);
-            Debug.Log("fin: " + xf + ", " + yf);
-            */
 
             // Generacion del camino a la salida
             bool done = false;
