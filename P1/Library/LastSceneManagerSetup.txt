@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/P2/Scenes/GraphGrid.unity
+- path: Assets/Scenes/GraphGrid.unity
   isLoaded: 1
   isActive: 1
