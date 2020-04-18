@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/GraphGrid.unity
+- path: Assets/Scenes/Decisiones.unity
   isLoaded: 1
   isActive: 1
