@@ -46,7 +46,7 @@ namespace UCM.IAV.Movimiento
             velocidad.x = Input.GetAxis("Horizontal");
             velocidad.z = Input.GetAxis("Vertical");
             // Faltaba por normalizar el vector
-            velocidad.Normalize();
+            velocidad /= 1.78f;
             velocidad *= velocidadMax; 
         }
 
@@ -62,7 +62,7 @@ namespace UCM.IAV.Movimiento
             else
             {
                 // El cuerpo rígido no podrá estar marcado como cinemático
-                _cuerpoRigido.AddForce(velocidad * Time.deltaTime, ForceMode.VelocityChange); // Cambiamos directamente la velocidad, sin considerar la masa (pidiendo que avance esa distancia de golpe)
+                _cuerpoRigido.velocity  = velocidad; // Cambiamos directamente la velocidad, sin considerar la masa (pidiendo que avance esa distancia de golpe)
             } 
         }
 
