@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class PlacaDePresion : MonoBehaviour
 {
-    public GameObject Puerta;
+    [SerializeField]
+    private GameObject Puerta;
+
     private IEnumerator coroutine;
-    public float TimeToReopen = 2.0f;
+
+    [SerializeField]
+    private float TimeToReopen = 2.0f;
     private void OnCollisionEnter(Collision collision)
     {
         //Desactivo la puerta para poder pasar
