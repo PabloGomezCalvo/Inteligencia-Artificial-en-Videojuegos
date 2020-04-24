@@ -5,34 +5,28 @@ using UnityEngine;
 public class Palanca : MonoBehaviour
 {
 
-    public Material MatEnabled;
-    public Material MatDisabled;
-
-    [System.Serializable]
-    public class OnPalancaToggle : UnityEngine.Events.UnityEvent<bool> {};
-
     [SerializeField]
-    public OnPalancaToggle OnInteract;
+    private Material MatEnabled;
+    [SerializeField]
+    private Material MatDisabled;
+    [SerializeField]
+    private LamparaMovement Lampara;
+
 
 
     private MeshRenderer _mesh;
-
+    
     private bool _enabled;
 
     public void Toggle()
     {
         _enabled = !_enabled;
 
-        OnInteract.Invoke(_enabled);
-        
-
         if (_enabled)
             _mesh.material = MatEnabled;
         else
             _mesh.material = MatDisabled;
-
     }
-
 
     // Start is called before the first frame update
     void Start()
@@ -46,12 +40,12 @@ public class Palanca : MonoBehaviour
 
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnCollisionEnter(Collision collision)
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if(collision.gameObject.tag == "Fantasma")
+        {
+            Lampara.Move();
             Toggle();
+        }
     }
-
-
 }
