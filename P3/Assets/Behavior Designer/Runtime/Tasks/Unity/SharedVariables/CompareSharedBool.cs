@@ -16,8 +16,7 @@ namespace BehaviorDesigner.Runtime.Tasks.Unity.SharedVariables
 
         public override void OnReset()
         {
-            variable = false;
-            compareTo = false;
+            
         }
     }
 }

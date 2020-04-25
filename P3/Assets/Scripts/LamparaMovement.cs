@@ -13,11 +13,20 @@ public class LamparaMovement : MonoBehaviour
     private float WaitTime;
     [SerializeField]
     private Palanca palanca;
+    [SerializeField]
+    private BehaviorDesigner.Runtime.BehaviorTree [] pj;
 
+    private void Start()
+    {
+
+        
+    }
     public void Move()
     {
         if (transform.position.y != MinH)
         {
+            foreach(BehaviorDesigner.Runtime.BehaviorTree a in pj)
+                a.SetVariableValue("Lampara", true);
             corutine = MoveCorutine(true);
             StartCoroutine(corutine);
         }
@@ -53,6 +62,8 @@ public class LamparaMovement : MonoBehaviour
     {
         if(transform.position.y == MinH && collision.gameObject.tag == "Vizconde")
         {
+            foreach (BehaviorDesigner.Runtime.BehaviorTree a in pj)
+                a.SetVariableValue("Lampara", false);
             palanca.Toggle();
             corutine = MoveCorutine(false);
             StartCoroutine(corutine);        

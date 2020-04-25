@@ -42,8 +42,8 @@ public class Palanca : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.tag == "Fantasma")
-        {
+        if(collision.gameObject.tag == "Fantasma" && !_enabled)
+        { 
             Lampara.Move();
             Toggle();
         }
