@@ -38,7 +38,6 @@ namespace BehaviorDesigner.Runtime.Tasks.Unity.UnityNavMeshAgent
 
         public override void OnReset()
         {
-            targetGameObject = null;
         }
     }
 }
