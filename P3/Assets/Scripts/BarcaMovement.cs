@@ -1,6 +1,7 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
+using BehaviorDesigner.Runtime;
 
 public class BarcaMovement : MonoBehaviour
 {
@@ -23,6 +24,12 @@ public class BarcaMovement : MonoBehaviour
         pj.transform.position = this.transform.position;
         //Corrutina encargada del movimiento, parametro derecho para saber hacia donde tengo que ir
         coroutine = Cerrar(waitTime, pj, Position1 == transform.position.x);
+        if(pj.tag == "Fantasma")
+        {
+            pj.GetComponent<BehaviorTree>().enabled = false;
+            pj.GetComponent<NavMeshAgent>().enabled = false;
+            pj.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+        }
         StartCoroutine(coroutine);
     }
 
@@ -57,5 +64,12 @@ public class BarcaMovement : MonoBehaviour
             pj.transform.position = Spawn2.transform.position;
         else
             pj.transform.position = Spawn1.transform.position;
+
+        if (pj.tag == "Fantasma")
+        {
+            pj.GetComponent<BehaviorTree>().enabled = true;
+            pj.GetComponent<NavMeshAgent>().enabled = true;
+            pj.GetComponent<Rigidbody>().constraints = ~RigidbodyConstraints.FreezeRotationY;
+        }
     }
 }
