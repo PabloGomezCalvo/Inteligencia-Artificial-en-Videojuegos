@@ -24,7 +24,7 @@ public class BarcaMovement : MonoBehaviour
         pj.transform.position = this.transform.position;
         //Corrutina encargada del movimiento, parametro derecho para saber hacia donde tengo que ir
         coroutine = Cerrar(waitTime, pj, Position1 == transform.position.x);
-        if(pj.tag == "Fantasma")
+        if(pj.tag != "Vizconde")
         {
             pj.GetComponent<BehaviorTree>().enabled = false;
             pj.GetComponent<NavMeshAgent>().enabled = false;
@@ -65,7 +65,7 @@ public class BarcaMovement : MonoBehaviour
         else
             pj.transform.position = Spawn1.transform.position;
 
-        if (pj.tag == "Fantasma")
+        if (pj.tag != "Vizconde")
         {
             pj.GetComponent<BehaviorTree>().enabled = true;
             pj.GetComponent<NavMeshAgent>().enabled = true;
