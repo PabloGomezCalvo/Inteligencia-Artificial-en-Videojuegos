@@ -30,6 +30,13 @@ public class LamparaMovement : MonoBehaviour
             corutine = MoveCorutine(true);
             StartCoroutine(corutine);
         }
+        else
+        {
+            foreach (BehaviorDesigner.Runtime.BehaviorTree a in pj)
+                a.SetVariableValue("Lampara", true);
+            corutine = MoveCorutine(false);
+            StartCoroutine(corutine);
+        }
     }
 
     private IEnumerator MoveCorutine(bool upper)

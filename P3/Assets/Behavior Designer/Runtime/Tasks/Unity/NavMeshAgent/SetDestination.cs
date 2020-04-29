@@ -13,6 +13,9 @@ namespace BehaviorDesigner.Runtime.Tasks.Unity.UnityNavMeshAgent
         [Tooltip("The NavMeshAgent destination")]
         public Vector3 destination;
 
+
+        public Transform destinationGameObject;
+
         // cache the navmeshagent component
         private NavMeshAgent navMeshAgent;
         private GameObject prevGameObject;
@@ -33,7 +36,16 @@ namespace BehaviorDesigner.Runtime.Tasks.Unity.UnityNavMeshAgent
                 return TaskStatus.Failure;
             }
 
-            return navMeshAgent.SetDestination(destination) ? TaskStatus.Success : TaskStatus.Failure;
+            if(destinationGameObject != null)
+            {
+                return navMeshAgent.SetDestination(destinationGameObject.localPosition) ? TaskStatus.Success : TaskStatus.Failure;
+
+            }
+            else
+            {
+                return navMeshAgent.SetDestination(destination) ? TaskStatus.Success : TaskStatus.Failure;
+
+            }
         }
 
         public override void OnReset()
