@@ -22,8 +22,12 @@ public class LamparaMovement : MonoBehaviour
     public void Move(bool down)
     {
         _down = down;
+        if (transform.position.y != MinH)
+           foreach (BehaviorDesigner.Runtime.BehaviorTree a in pj)
+               a.SetVariableValue("Lampara", true);
         corutine = MoveCorutine(down);
         StartCoroutine(corutine);
+        
     }
 
     private IEnumerator MoveCorutine(bool upper)
@@ -56,6 +60,8 @@ public class LamparaMovement : MonoBehaviour
     {
         if(_down && collision.gameObject.tag == "Vizconde")
         {
+            foreach (BehaviorDesigner.Runtime.BehaviorTree a in pj)
+                a.SetVariableValue("Lampara", false);
             palanca.Toggle();
         }
     }
