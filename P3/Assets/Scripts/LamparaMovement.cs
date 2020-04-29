@@ -23,8 +23,11 @@ public class LamparaMovement : MonoBehaviour
     {
         _down = down;
         if (transform.position.y != MinH)
-           foreach (BehaviorDesigner.Runtime.BehaviorTree a in pj)
-               a.SetVariableValue("Lampara", true);
+        {
+            Debug.Log("XD");
+            foreach (BehaviorDesigner.Runtime.BehaviorTree a in pj)
+                a.SetVariableValue("Lampara", true);
+        }
         corutine = MoveCorutine(down);
         StartCoroutine(corutine);
         
