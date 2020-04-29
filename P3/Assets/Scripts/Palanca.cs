@@ -13,25 +13,37 @@ public class Palanca : MonoBehaviour
     private LamparaMovement Lampara;
 
 
+    public enum PalancaEnum {IZQ, DER }
 
+    public PalancaEnum typePalanca;
     private MeshRenderer _mesh;
     
-    private bool _enabled;
+    public bool EnabledP;
 
     public void Toggle()
     {
-        _enabled = !_enabled;
+        EnabledP = !EnabledP;
 
-        if (_enabled)
+        if (enabled)
             _mesh.material = MatEnabled;
         else
             _mesh.material = MatDisabled;
+
+        if(typePalanca == PalancaEnum.IZQ)
+        {
+            GameManager.instance.SetLamparaIzquierda(EnabledP);
+        }
+        else
+        {
+            GameManager.instance.SetLamparaDerecha(EnabledP);
+
+        }
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        _enabled = false;
+        EnabledP = false;
         _mesh = GetComponent<MeshRenderer>();
         if(_mesh != null)
         { 
@@ -42,10 +54,9 @@ public class Palanca : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.tag == "Fantasma" && !_enabled)
+        if(collision.gameObject.tag == "Fantasma" && !EnabledP)
         { 
-            Lampara.Move();
             Toggle();
         }
     }
-}
+}   
