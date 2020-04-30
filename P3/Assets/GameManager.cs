@@ -6,18 +6,25 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
+    //Lamparas
     private bool _luzIZQ;
     private bool _luzDER;
 
     public LamparaMovement LamparIZQ;
     public LamparaMovement LamparDER;
 
+    //Celda
+    private bool _captured;
+    private bool _locked;
 
+    //Piano
+    private bool _breakingPiano;
 
     // Start is called before the first frame update
-    void Start()
-    {
-        instance = this;        
+    void Start() {
+        _captured = false;
+        _locked = false;
+        instance = this;
     }
 
     // Update is called once per frame
@@ -36,8 +43,6 @@ public class GameManager : MonoBehaviour
     { 
         _luzIZQ = enabled;
         LamparIZQ.Move(enabled);
-
-
     }
 
     public bool GetLampIZQ
@@ -70,11 +75,47 @@ public class GameManager : MonoBehaviour
     {
         get
         {
-            return true;
+            return _singing;
         }
         set
         {
             _singing = value;
+        }
+    }
+
+    public bool Captured
+    {
+        get
+        {
+            return _captured;
+        }
+        set
+        {
+            _captured = value;
+        }
+    }
+
+    public bool Locked
+    {
+        get
+        {
+            return _locked;
+        }
+        set
+        {
+            _locked = value;
+        }
+    }
+
+    public bool Breaking
+    {
+        get
+        {
+            return _breakingPiano;
+        }
+        set
+        {
+            _breakingPiano = value;
         }
     }
 }
