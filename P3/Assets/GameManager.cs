@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour
     public LamparaMovement LamparDER;
 
 
+    public ObstaculoControlador[] obstaculos;
+
 
     // Start is called before the first frame update
     void Start()
@@ -30,6 +32,15 @@ public class GameManager : MonoBehaviour
     {
         _luzDER = enabled;
         LamparDER.Move(enabled);
+        if (!GetPublicAvailable)
+        {
+            Obstaculos = false;
+        }
+        else
+        {
+            Obstaculos = true;
+
+        }
     }
 
     public void SetLamparaIzquierda(bool enabled)
@@ -37,7 +48,33 @@ public class GameManager : MonoBehaviour
         _luzIZQ = enabled;
         LamparIZQ.Move(enabled);
 
+        if (!GetPublicAvailable)
+        {
+            Obstaculos = false;
+        }
+        else
+        {
+            Obstaculos = true;
 
+        }
+
+    }
+
+    private bool Obstaculos
+    {
+        get
+        {
+            return GetPublicAvailable;
+        }
+
+        set
+        {
+            print(value);
+            foreach (var obs in obstaculos)
+            {
+                obs.Obstaculo = value;
+            }
+        }
     }
 
     public bool GetLampIZQ
@@ -70,7 +107,7 @@ public class GameManager : MonoBehaviour
     {
         get
         {
-            return true;
+            return _singing;
         }
         set
         {
