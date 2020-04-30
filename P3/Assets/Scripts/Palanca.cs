@@ -54,7 +54,7 @@ public class Palanca : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.tag == "Fantasma" && !EnabledP)
+        if(!EnabledP)
         { 
             Toggle();
         }
