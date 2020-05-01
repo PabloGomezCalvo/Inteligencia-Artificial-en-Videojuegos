@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.AI;
 using BehaviorDesigner.Runtime;
 
@@ -40,7 +38,6 @@ public class Fantasma : MonoBehaviour {
             //La ponemos como hija del fantasma
             bailarina.transform.parent = this.transform;
             //Le quitamos la colision para evitar problemas de estancamiento
-            //bailarina.GetComponent<CapsuleCollider>().enabled = false;
             bailarina.GetComponent<Rigidbody>().useGravity = false;
             bailarina.GetComponent<BehaviorTree>().enabled = false;
             bailarina.GetComponent<NavMeshAgent>().enabled = false;
@@ -50,9 +47,9 @@ public class Fantasma : MonoBehaviour {
         else if (collision.gameObject.tag == "Vizconde" && GameManager.instance.Captured == true)
         {
             // Le damos colision
-            bailarina.GetComponent<CapsuleCollider>().enabled = true;
-            bailarina.GetComponent<BehaviorTree>().enabled = true;
-            bailarina.GetComponent<NavMeshAgent>().enabled = true;
+            bailarina.GetComponent<Rigidbody>().useGravity = true;
+            bailarina.GetComponent<BehaviorTree>().enabled = false;
+            bailarina.GetComponent<NavMeshAgent>().enabled = false;
             // La volvemos a soltar en la escena
             bailarina.transform.parent = collision.gameObject.transform.parent;
             //Quitamos la variable global

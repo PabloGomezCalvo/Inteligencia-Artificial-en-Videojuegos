@@ -1,6 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.AI;
+using BehaviorDesigner.Runtime;
 
 public class Celda : MonoBehaviour
 {
@@ -36,6 +36,8 @@ public class Celda : MonoBehaviour
 
                 // Moverla dentro de la celda
                 preso.transform.position = CeldaPos.transform.position;
+                // Fix para el fantasma
+                collision.gameObject.transform.position = FueraCelda.transform.position;
 
                 GameManager.instance.Locked = true;
                 GameManager.instance.Captured = false;
@@ -45,6 +47,8 @@ public class Celda : MonoBehaviour
         {
             if (GameManager.instance.Locked) 
             {
+                preso.GetComponent<BehaviorTree>().enabled = true;
+                preso.GetComponent<NavMeshAgent>().enabled = true;
                 // Sacar a la bailarina de la celda y quitarla de presa
                 preso.transform.position = FueraCelda.transform.position;
                 preso.transform.parent = collision.transform.parent;
