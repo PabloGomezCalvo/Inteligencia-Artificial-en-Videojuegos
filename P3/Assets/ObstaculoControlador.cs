@@ -16,6 +16,7 @@ public class ObstaculoControlador : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //obstacle.enabled = false;
 
     }
 

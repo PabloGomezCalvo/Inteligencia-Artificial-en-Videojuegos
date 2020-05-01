@@ -24,7 +24,7 @@ public class LamparaMovement : MonoBehaviour
         _down = down;
         if (transform.position.y != MinH)
         {
-            Debug.Log("XD");
+
             foreach (BehaviorDesigner.Runtime.BehaviorTree a in pj)
                 a.SetVariableValue("Lampara", true);
         }

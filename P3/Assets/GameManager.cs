@@ -29,39 +29,34 @@ public class GameManager : MonoBehaviour
         instance = this;
     }
 
-    // Update is called once per frame
-    void Update()
+     public void SetLamparaDerecha(bool enabledL)
     {
         
-    }
-
-    public void SetLamparaDerecha(bool enabled)
-    {
-        _luzDER = enabled;
-        LamparDER.Move(enabled);
-        if (!GetPublicAvailable)
+        _luzDER = enabledL;
+        LamparDER.Move(enabledL);
+        if (GetPublicAvailable)
         {
             Obstaculos = false;
         }
         else
         {
-            Obstaculos = true;
+            Obstaculos = false;
 
         }
     }
 
-    public void SetLamparaIzquierda(bool enabled)
+    public void SetLamparaIzquierda(bool enabledL)
     { 
-        _luzIZQ = enabled;
-        LamparIZQ.Move(enabled);
+        _luzIZQ = enabledL;
+        LamparIZQ.Move(enabledL);
 
-        if (!GetPublicAvailable)
+        if (GetPublicAvailable)
         {
-            Obstaculos = false;
+            Obstaculos = true;
         }
         else
         {
-            Obstaculos = true;
+            Obstaculos = false;
 
         }
 
@@ -76,7 +71,6 @@ public class GameManager : MonoBehaviour
 
         set
         {
-            print(value);
             foreach (var obs in obstaculos)
             {
                 obs.Obstaculo = value;
@@ -104,7 +98,7 @@ public class GameManager : MonoBehaviour
     {
         get
         {
-            return _luzDER || _luzIZQ;
+            return GetLampDER || GetLampIZQ;
         }
     }
 
