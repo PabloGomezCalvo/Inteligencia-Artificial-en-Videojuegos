@@ -31,7 +31,7 @@ public class Fantasma : MonoBehaviour {
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Cantante")
+        if (collision.gameObject.tag == "Cantante" && !GameManager.instance.Locked)
         {
             // Guardamos la bailarina
             bailarina = collision.gameObject;
