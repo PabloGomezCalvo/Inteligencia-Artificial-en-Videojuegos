@@ -22,9 +22,9 @@ public class LamparaMovement : MonoBehaviour
     public void Move(bool down)
     {
         _down = down;
+        //le digo al publico que se vaya o vuelva al escenario
         if (transform.position.y != MinH)
         {
-
             foreach (BehaviorDesigner.Runtime.BehaviorTree a in pj)
                 a.SetVariableValue("Lampara", true);
         }
@@ -33,6 +33,7 @@ public class LamparaMovement : MonoBehaviour
             foreach (BehaviorDesigner.Runtime.BehaviorTree a in pj)
                 a.SetVariableValue("Lampara", false);
         }
+        //Empiezo corrutina de movimiento
         corutine = MoveCorutine(down);
         StartCoroutine(corutine);
         
@@ -50,7 +51,7 @@ public class LamparaMovement : MonoBehaviour
         while (!done) {
             yield return new WaitForSeconds(WaitTime);
             transform.Translate(new Vector3(0, vel, 0));
-
+            //muevo la lampara y compruebo si he terminado de moverlas
             if(upper && transform.position.y <= MinH)
             {
                 transform.position = new Vector3(transform.position.x,MinH,transform.position.z);
@@ -68,7 +69,7 @@ public class LamparaMovement : MonoBehaviour
     {
         if(_down && collision.gameObject.tag == "Vizconde")
         {
-            palanca.Toggle();
+            palanca.Toggle(); //subo lampara
         }
     }
 

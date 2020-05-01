@@ -9,8 +9,6 @@ public class Palanca : MonoBehaviour
     private Material MatEnabled;
     [SerializeField]
     private Material MatDisabled;
-    [SerializeField]
-    private LamparaMovement Lampara;
 
 
     public enum PalancaEnum {IZQ, DER }
@@ -20,6 +18,7 @@ public class Palanca : MonoBehaviour
     
     public bool EnabledP;
 
+    //cambio de estado
     public void Toggle()
     {
         EnabledP = !EnabledP;
@@ -36,7 +35,6 @@ public class Palanca : MonoBehaviour
         else
         {
             GameManager.instance.SetLamparaDerecha(EnabledP);
-
         }
     }
 
@@ -49,7 +47,6 @@ public class Palanca : MonoBehaviour
         { 
             _mesh.material = MatDisabled;
         }
-
     }
 
     private void OnCollisionEnter(Collision collision)

@@ -12,6 +12,7 @@ public class CantanteSaved : MonoBehaviour
     {
         if(collision.gameObject.tag == "Vizconde")
         {
+            //dejo de estar asustada
             cantante.SetVariableValue("Asustada",false);
         }
     }

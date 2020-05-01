@@ -12,7 +12,8 @@ public class Piano : MonoBehaviour
     {
         if (collision.gameObject.tag == "Vizconde")
         {
-            GameManager.instance.Breaking = true;
+            GameManager.instance.Breaking = true;//me rompo
+            //Si esta capturada, tengo q soltarla
             if (GameManager.instance.Captured)
             {
                 // Le damos colision
@@ -28,7 +29,7 @@ public class Piano : MonoBehaviour
         }
         else if (collision.gameObject.tag == "Fantasma")
         {
-            GameManager.instance.Breaking = false;
+            GameManager.instance.Breaking = false;//me arreglo
         }
     }
 }
