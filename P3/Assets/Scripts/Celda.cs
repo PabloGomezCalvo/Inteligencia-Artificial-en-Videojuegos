@@ -29,13 +29,13 @@ public class Celda : MonoBehaviour
         {
             if (GameManager.instance.Captured)
             {
-                // Coger del fantasma la bailarina y quitarla de hija
-                
                 // Guardarla como presa
-                //preso = bailarina;
+                preso = collision.gameObject.GetComponent<Fantasma>().Dancer;
+                // Quitarla de hija
+                preso.transform.parent = this.transform.parent;
 
                 // Moverla dentro de la celda
-                collision.gameObject.transform.position = CeldaPos.transform.position;
+                preso.transform.position = CeldaPos.transform.position;
 
                 GameManager.instance.Locked = true;
                 GameManager.instance.Captured = false;
@@ -47,6 +47,7 @@ public class Celda : MonoBehaviour
             {
                 // Sacar a la bailarina de la celda y quitarla de presa
                 preso.transform.position = FueraCelda.transform.position;
+                preso.transform.parent = collision.transform.parent;
                 preso = null;
 
                 GameManager.instance.Locked = false;
