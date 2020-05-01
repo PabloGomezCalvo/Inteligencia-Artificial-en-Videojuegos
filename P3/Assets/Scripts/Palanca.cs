@@ -24,7 +24,7 @@ public class Palanca : MonoBehaviour
     {
         EnabledP = !EnabledP;
 
-        if (enabled)
+        if (EnabledP)
             _mesh.material = MatEnabled;
         else
             _mesh.material = MatDisabled;

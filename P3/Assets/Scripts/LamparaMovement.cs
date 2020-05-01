@@ -28,6 +28,11 @@ public class LamparaMovement : MonoBehaviour
             foreach (BehaviorDesigner.Runtime.BehaviorTree a in pj)
                 a.SetVariableValue("Lampara", true);
         }
+        else
+        {
+            foreach (BehaviorDesigner.Runtime.BehaviorTree a in pj)
+                a.SetVariableValue("Lampara", false);
+        }
         corutine = MoveCorutine(down);
         StartCoroutine(corutine);
         
@@ -63,8 +68,6 @@ public class LamparaMovement : MonoBehaviour
     {
         if(_down && collision.gameObject.tag == "Vizconde")
         {
-            foreach (BehaviorDesigner.Runtime.BehaviorTree a in pj)
-                a.SetVariableValue("Lampara", false);
             palanca.Toggle();
         }
     }
