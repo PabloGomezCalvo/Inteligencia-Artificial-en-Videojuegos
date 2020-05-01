@@ -14,11 +14,14 @@ public class InputManagerCheats : MonoBehaviour
     [SerializeField]
     private GameManager gameManager;
     [SerializeField]
+    private Fantasma fantasma;
+    [SerializeField]
     private Text[] textos;
 
     private Vector3 respawnCelda;
     private Vector3 respawnFantasma;
     private Vector3 respawnPlayer;
+    private Vector3 respawnBackStage;
     private int currentCamera;
 
     // Start is called before the first frame update
@@ -30,7 +33,7 @@ public class InputManagerCheats : MonoBehaviour
         textos[3].text = "Secuestrada: NO";
         textos[4].text = "Cantando: SI";
 
-
+        respawnBackStage = new Vector3(-1.6f, 1.7f, 9.3f);
         respawnCelda = new Vector3(7.3f,1.27f,16.5f);
         respawnFantasma = new Vector3(-6.7f,1.7f,16.1f);
         respawnPlayer = new Vector3(player.transform.position.x, player.transform.position.y, player.transform.position.z);
@@ -68,7 +71,6 @@ public class InputManagerCheats : MonoBehaviour
         {
             player.transform.position = respawnCelda;
         }
-
         string piano;
         if (gameManager.Breaking)
             piano = "SI";
@@ -91,7 +93,7 @@ public class InputManagerCheats : MonoBehaviour
         textos[2].text = "LamparaDer rota: " + lampDer;
 
         string secuestrada;
-        if (gameManager.Captured)
+        if (gameManager.Captured || gameManager.Locked)
             secuestrada = "SI";
         else
             secuestrada = "NO";
